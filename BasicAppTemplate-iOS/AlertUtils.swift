@@ -23,7 +23,7 @@ func showErrorMessage(_ title:String, message:String, okLabel:String) -> Void {
 
 func showErrorMessage( _ message:String? = nil ) -> Void {
     
-    showErrorMessage("تطبيق عزوتنا",
-                     message: message ?? "نأسف، هناك خلل ما !",
-                     okLabel: "حسناً")
+    showErrorMessage("App Message",
+                     message: message ?? "Something went wrong !",
+                     okLabel: "OK")
 }
