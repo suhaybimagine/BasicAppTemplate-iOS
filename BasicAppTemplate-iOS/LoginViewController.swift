@@ -49,6 +49,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.passwordField.text = nil
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         textField.resignFirstResponder()
@@ -56,8 +62,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func submitLogin(_ sender: Any) {
+        
+        self.view.endEditing(true)
 
-        let passRule = ValidationRuleLength(min: 6, max: 8, lengthType: .characters, error: ValidationError.password)
+        let passRule = ValidationRuleLength(min: 6, max: 40, lengthType: .characters, error: ValidationError.password)
         let emailRule = ValidationRulePattern(pattern: EmailValidationPattern.standard, error: ValidationError.email)
         
         if let email = self.emailField.text, email.validate(rule: emailRule).isValid,

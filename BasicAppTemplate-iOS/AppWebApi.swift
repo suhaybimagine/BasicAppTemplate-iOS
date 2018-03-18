@@ -25,6 +25,8 @@ class AppWebApi {
                                    completion:@escaping ApiCallCompletionHandler,
                                    failure:FailureHandler? = nil) -> Void {
         
+        SVProgressHUD.setDefaultMaskType(.gradient)
+        
         if let comment = loadingComment {
             SVProgressHUD.show(withStatus: comment)
         } else {
@@ -116,7 +118,7 @@ class AppWebApi {
     typealias SuccessCompletionHandler = () -> Void
     static func confirmSignup(forUser userId:String, withCode code:String, onSuccess:@escaping SuccessCompletionHandler) {
         
-        callApi(endpoint: "confirm", params: ["userID": userId, "code": code], completion:   { (json) -> String? in
+        callApi(endpoint: "confirm", params: ["userID": userId, "code": code], completion: { (json) -> String? in
             
             if let status = json["status"].string, status == "success" {
                 onSuccess()
@@ -130,9 +132,22 @@ class AppWebApi {
     
     static func sendConfirmationCode(forUser userId:String) {
         
-        callApi(endpoint: "sendconfirmcode", params: ["userID": userId], completion:   { (json) -> String? in
+        callApi(endpoint: "sendconfirmcode", params: ["userID": userId], completion: { (json) -> String? in
             
             if let status = json["status"].string, status == "success" {
+                return nil
+            } else {
+                return json["message"].string ?? "Something went wrong !"
+            }
+        })
+    }
+    
+    static func reportForgotPassword(forEmail email:String, onSuccess:@escaping SuccessCompletionHandler) {
+        
+        callApi(endpoint: "forgotpassword", params: ["email": email], completion: { (json) -> String? in
+            
+            if let status = json["status"].string, status == "success" {
+                onSuccess()
                 return nil
             } else {
                 return json["message"].string ?? "Something went wrong !"

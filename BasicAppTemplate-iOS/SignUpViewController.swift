@@ -56,11 +56,13 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func submitSignup(_ sender: Any) {
         
+        self.view.endEditing(true)
+        
         let nameRule = ValidationRuleRequired<String>(error: ValidationError.name)
         let emailRule = ValidationRulePattern(pattern: EmailValidationPattern.standard, error: ValidationError.email)
         
         var passRules = ValidationRuleSet<String>()
-        passRules.add(rule: ValidationRuleLength(min: 6, max: 8, lengthType: .characters, error: ValidationError.password))
+        passRules.add(rule: ValidationRuleLength(min: 6, max: 40, lengthType: .characters, error: ValidationError.password))
         passRules.add(rule: ValidationRuleEquality<String>(dynamicTarget: { () -> String in
             return self.confirmField.text ?? ""
         }, error: ValidationError.confirm))

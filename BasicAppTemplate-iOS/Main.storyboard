@@ -154,7 +154,7 @@
                                         <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="email"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" textContentType="email"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKx-Hq-2LB">
                                         <rect key="frame" x="37" y="108" width="300" height="55"/>
@@ -180,13 +180,22 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="DjZ-9R-3Ak"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="2Rn-Cd-l71" appends="YES" id="dX6-eF-X8Q"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="emailField" destination="8jK-rh-cM1" id="af2-SR-f3V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bun-2k-1iz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="2Rn-Cd-l71">
+                    <connections>
+                        <action selector="viewWasTapped:" destination="T9j-1J-J3O" id="Tbe-XW-zIw"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1036" y="-598.65067466266873"/>
         </scene>
