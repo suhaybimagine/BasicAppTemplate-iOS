@@ -5,8 +5,9 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
+        <development version="8000" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -29,6 +30,10 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="BasicAppTemplate_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jx8-uv-3RE"/>
+                        <viewControllerLayoutGuide type="bottom" id="nOT-aM-kV3"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -108,12 +113,11 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="Ssj-oE-Agd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2L8-C6-lK8"/>
+                            <constraint firstItem="Ssj-oE-Agd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2L8-C6-lK8"/>
                             <constraint firstItem="Ssj-oE-Agd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="L4e-B7-obv"/>
-                            <constraint firstItem="Ssj-oE-Agd" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ToH-u9-HnK"/>
-                            <constraint firstItem="Ssj-oE-Agd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="acZ-AG-VVO"/>
+                            <constraint firstItem="Ssj-oE-Agd" firstAttribute="bottom" secondItem="nOT-aM-kV3" secondAttribute="top" id="ToH-u9-HnK"/>
+                            <constraint firstItem="Ssj-oE-Agd" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="acZ-AG-VVO"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="02U-ZY-Z03" appends="YES" id="j3c-3k-43n"/>
                         </connections>
@@ -140,6 +144,10 @@
         <scene sceneID="5vc-kT-2WL">
             <objects>
                 <viewController id="T9j-1J-J3O" customClass="ForgotPasswordViewController" customModule="BasicAppTemplate_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WT6-ck-ZJU"/>
+                        <viewControllerLayoutGuide type="bottom" id="ExY-uk-jLK"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="u55-bB-rE7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,7 +189,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
-                        <viewLayoutGuide key="safeArea" id="DjZ-9R-3Ak"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="2Rn-Cd-l71" appends="YES" id="dX6-eF-X8Q"/>
                         </connections>
@@ -203,6 +210,10 @@
         <scene sceneID="0WA-19-B4U">
             <objects>
                 <viewController id="rit-lX-f7c" customClass="SignUpViewController" customModule="BasicAppTemplate_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wjx-ye-KLU"/>
+                        <viewControllerLayoutGuide type="bottom" id="6Ob-uZ-RZP"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Sys-7V-yZj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -296,12 +307,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="4cQ-mN-13o" firstAttribute="trailing" secondItem="oWv-7J-q2X" secondAttribute="trailing" id="3iq-gG-yvt"/>
+                            <constraint firstItem="4cQ-mN-13o" firstAttribute="trailing" secondItem="Sys-7V-yZj" secondAttribute="trailing" id="3iq-gG-yvt"/>
                             <constraint firstItem="4cQ-mN-13o" firstAttribute="top" secondItem="Sys-7V-yZj" secondAttribute="top" id="B0T-Z7-62r"/>
-                            <constraint firstItem="4cQ-mN-13o" firstAttribute="bottom" secondItem="oWv-7J-q2X" secondAttribute="bottom" id="Dzi-eI-ifK"/>
-                            <constraint firstItem="4cQ-mN-13o" firstAttribute="leading" secondItem="oWv-7J-q2X" secondAttribute="leading" id="NCH-7W-ej6"/>
+                            <constraint firstItem="4cQ-mN-13o" firstAttribute="bottom" secondItem="6Ob-uZ-RZP" secondAttribute="top" id="Dzi-eI-ifK"/>
+                            <constraint firstItem="4cQ-mN-13o" firstAttribute="leading" secondItem="Sys-7V-yZj" secondAttribute="leading" id="NCH-7W-ej6"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="oWv-7J-q2X"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="TCb-n2-RzX" appends="YES" id="cRN-O7-nUU"/>
                         </connections>
@@ -329,6 +339,10 @@
         <scene sceneID="L6u-51-vLc">
             <objects>
                 <viewController id="WOC-b9-QCW" customClass="ConfirmSignUpViewController" customModule="BasicAppTemplate_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ctc-hm-ern"/>
+                        <viewControllerLayoutGuide type="bottom" id="wj0-RY-8ja"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5gc-qd-j1n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -419,11 +433,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="51n-6h-JCi" firstAttribute="leading" secondItem="GYi-d5-SQg" secondAttribute="leading" id="VcJ-jK-UFc"/>
-                            <constraint firstItem="51n-6h-JCi" firstAttribute="trailing" secondItem="GYi-d5-SQg" secondAttribute="trailing" id="gBf-XO-ozO"/>
+                            <constraint firstItem="51n-6h-JCi" firstAttribute="leading" secondItem="5gc-qd-j1n" secondAttribute="leading" id="VcJ-jK-UFc"/>
+                            <constraint firstItem="51n-6h-JCi" firstAttribute="trailing" secondItem="5gc-qd-j1n" secondAttribute="trailing" id="gBf-XO-ozO"/>
                             <constraint firstItem="51n-6h-JCi" firstAttribute="centerY" secondItem="5gc-qd-j1n" secondAttribute="centerY" id="skW-0q-hzc"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="GYi-d5-SQg"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="adU-T9-OBd" appends="YES" id="yFO-vR-Lyz"/>
                         </connections>
@@ -450,11 +463,14 @@
         <scene sceneID="tjL-dw-fRI">
             <objects>
                 <viewController id="KoH-tP-AgW" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ur2-67-1YX"/>
+                        <viewControllerLayoutGuide type="bottom" id="lzg-Mu-Zgn"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Cnd-Vj-rBq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="vrO-5R-bZu"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="recents" id="4Z6-OS-e5R"/>
                 </viewController>
@@ -466,11 +482,14 @@
         <scene sceneID="f9v-lc-psH">
             <objects>
                 <viewController id="jQF-3W-PLT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3pA-Pa-g1H"/>
+                        <viewControllerLayoutGuide type="bottom" id="vT8-Io-HBu"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="b3F-Hz-zWF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Fgc-ha-Dnp"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="mostViewed" id="Bug-hD-uug"/>
                 </viewController>
@@ -482,11 +501,14 @@
         <scene sceneID="Wyz-yb-Lhq">
             <objects>
                 <viewController id="UPu-Tj-gO9" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lGl-sy-6pR"/>
+                        <viewControllerLayoutGuide type="bottom" id="qwH-Zc-ePu"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="13q-uo-x06">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="w1B-Hu-8PC"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="contacts" id="wPN-y3-mbF"/>
                 </viewController>
@@ -498,6 +520,10 @@
         <scene sceneID="p4u-Vl-rps">
             <objects>
                 <viewController id="dGD-Ze-S25" customClass="HomeViewController" customModule="BasicAppTemplate_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FDM-mP-DiE"/>
+                        <viewControllerLayoutGuide type="bottom" id="gat-TR-cbD"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sa7-4k-zUs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -512,7 +538,6 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="KYH-Wh-Hfc"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="LPJ-zu-70x"/>
                 </viewController>
