@@ -14,6 +14,7 @@ enum ValidationError : Error {
     case email
     case confirm
     case name
+    case photo
 }
 
 class LoginViewController: UIViewController, UITextFieldDelegate {

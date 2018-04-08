@@ -95,24 +95,57 @@ class AppWebApi {
         })
     }
     
-    typealias SignUpSuccessHandler = (String) -> Void
-    static func signUp(name:String, email:String, password:String, success:@escaping SignUpSuccessHandler, failure:FailureHandler? = nil) {
+    typealias SignUpSuccessHandler = (String, String?) -> Void
+    typealias SignUpProgressHandler = (Progress) -> Void
+    static func signUp(name:String, email:String, password:String, photo:UIImage, success:@escaping SignUpSuccessHandler, progress:SignUpProgressHandler? = nil, failure:FailureHandler? = nil) {
         
-        callApi(loadingComment: "Registering..",
-                endpoint: "signup",
-                params: ["name": name, "email": email, "password": password],
-                completion: { (json) -> String? in
+        let comment = "Registering..."
+        SVProgressHUD.setDefaultMaskType(.gradient)
+        SVProgressHUD.show(withStatus: comment)
+        
+        Alamofire.upload(multipartFormData: { (formData) in
+            
+            formData.append(name.data(using: .utf8)!, withName: "name")
+            formData.append(email.data(using: .utf8)!, withName: "email")
+            formData.append(password.data(using: .utf8)!, withName: "password")
+            formData.append(UIImageJPEGRepresentation(photo, 1)!, withName: "photo", fileName: "user_photo.jpg", mimeType: "image/jpeg")
+            
+        }, to: "\(base)/signup") { (result) in
+            
+            switch result {
+            case .success(let upload, _, _):
+                
+                upload.uploadProgress(closure: { (prog) in
+                    SVProgressHUD.showProgress( Float(prog.fractionCompleted) , status: comment)
+                    progress?(prog)
+                })
+                
+                upload.responseSwiftyJSON { response in
                     
-                    if let status = json["status"].string, status == "success",
-                        let userId = json["user_id"].string {
+                    SVProgressHUD.dismiss()
+                    if let json = response.result.value {
+                    
+                        if let status = json["status"].string, status == "success",
+                            let userId = json["user_id"].string {
+                            
+                            success(userId, json["photo_url"].string )
+                        } else {
+                            
+                            failure?(json["message"].string ?? "Something went wrong !")
+                        }
                         
-                        success(userId)
-                        return nil
                     } else {
                         
-                        return json["message"].string ?? "Something went wrong !"
+                        failure?("Something went wrong !")
                     }
-        })
+                }
+                
+            case .failure(let encodingError):
+                
+                SVProgressHUD.dismiss()
+                failure?(encodingError.localizedDescription)
+            }
+        }
     }
     
     typealias SuccessCompletionHandler = () -> Void

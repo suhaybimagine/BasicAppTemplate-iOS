@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMaps
 import Firebase
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
