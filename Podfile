@@ -8,6 +8,7 @@ target 'BasicAppTemplate-iOS' do
   # Pods for BasicAppTemplate-iOS
   pod 'Alamofire'
   pod 'AlamofireImage'
+  pod 'MaterialComponents/ActivityIndicator'
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
   pod 'SVProgressHUD'

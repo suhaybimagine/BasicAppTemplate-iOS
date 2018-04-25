@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B2BBFC42090697C00C42DDB /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BBFC22090697C00C42DDB /* DatePickerViewController.swift */; };
+		9B2BBFC52090697C00C42DDB /* LocationSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BBFC32090697C00C42DDB /* LocationSelectViewController.swift */; };
+		9B2BBFC8209072CB00C42DDB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BBFC7209072CB00C42DDB /* Localizable.strings */; };
 		9B394AC4205E7F25000E65B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B394AC3205E7F25000E65B7 /* AppDelegate.swift */; };
 		9B394ACB205E7F25000E65B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B394ACA205E7F25000E65B7 /* Assets.xcassets */; };
 		9B394ACE205E7F25000E65B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B394ACC205E7F25000E65B7 /* LaunchScreen.storyboard */; };
@@ -36,6 +39,9 @@
 		51A6232FE18DBD2CF966100C /* Pods-BasicAppTemplate-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasicAppTemplate-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-BasicAppTemplate-iOS/Pods-BasicAppTemplate-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		6AED98ECF5C4F097A2BD7FE5 /* Pods_BasicAppTemplate_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BasicAppTemplate_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72F95612CC39CF161AC7DD3C /* Pods-BasicAppTemplate-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasicAppTemplate-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BasicAppTemplate-iOS/Pods-BasicAppTemplate-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		9B2BBFC22090697C00C42DDB /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		9B2BBFC32090697C00C42DDB /* LocationSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSelectViewController.swift; sourceTree = "<group>"; };
+		9B2BBFC7209072CB00C42DDB /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		9B394AC0205E7F25000E65B7 /* BasicAppTemplate-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BasicAppTemplate-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B394AC3205E7F25000E65B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B394ACA205E7F25000E65B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,6 +89,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9B2BBFC62090698300C42DDB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9B2BBFC22090697C00C42DDB /* DatePickerViewController.swift */,
+				9B2BBFC32090697C00C42DDB /* LocationSelectViewController.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		9B394AB7205E7F25000E65B7 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +133,7 @@
 			children = (
 				9B394AF6205E801E000E65B7 /* Main.storyboard */,
 				9B394ACC205E7F25000E65B7 /* LaunchScreen.storyboard */,
+				9B2BBFC7209072CB00C42DDB /* Localizable.strings */,
 			);
 			name = Interface;
 			sourceTree = "<group>";
@@ -138,6 +154,7 @@
 		9B394ADC205E7FA3000E65B7 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9B2BBFC62090698300C42DDB /* Utils */,
 				9B394AFC205E8374000E65B7 /* Login & Registration */,
 				9B394AFA205E8361000E65B7 /* MainTabBarController.swift */,
 				9B394AEE205E800F000E65B7 /* HomeViewController.swift */,
@@ -254,6 +271,7 @@
 				9B394ACE205E7F25000E65B7 /* LaunchScreen.storyboard in Resources */,
 				9B394B0A205E8670000E65B7 /* ProximaNova-Light.otf in Resources */,
 				9B394ACB205E7F25000E65B7 /* Assets.xcassets in Resources */,
+				9B2BBFC8209072CB00C42DDB /* Localizable.strings in Resources */,
 				9B394B09205E8670000E65B7 /* ProximaNova-Extrabold.otf in Resources */,
 				9B394B08205E8670000E65B7 /* ProximaNova-Bold.otf in Resources */,
 				9B394B0B205E8670000E65B7 /* ProximaNova-Semibold.otf in Resources */,
@@ -274,6 +292,10 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -286,6 +308,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -343,6 +369,7 @@
 			files = (
 				9B394AF1205E800F000E65B7 /* LoginViewController.swift in Sources */,
 				9B394AE5205E7FCF000E65B7 /* AlertUtils.swift in Sources */,
+				9B2BBFC42090697C00C42DDB /* DatePickerViewController.swift in Sources */,
 				9B394AFB205E8361000E65B7 /* MainTabBarController.swift in Sources */,
 				9B394AF3205E800F000E65B7 /* ForgotPasswordViewController.swift in Sources */,
 				9B394AF0205E800F000E65B7 /* SignUpViewController.swift in Sources */,
@@ -354,6 +381,7 @@
 				9B394AF4205E800F000E65B7 /* HomeViewController.swift in Sources */,
 				9B394B0E205E882E000E65B7 /* MainNavigationController.swift in Sources */,
 				9B394AFE205E8491000E65B7 /* Constants.swift in Sources */,
+				9B2BBFC52090697C00C42DDB /* LocationSelectViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

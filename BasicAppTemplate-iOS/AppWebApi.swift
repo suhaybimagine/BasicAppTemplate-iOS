@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 import SVProgressHUD
 import SwiftyJSON
+import CoreLocation
 
 class AppWebApi {
     
@@ -95,20 +96,41 @@ class AppWebApi {
         })
     }
     
+    
     typealias SignUpSuccessHandler = (String, String?) -> Void
     typealias SignUpProgressHandler = (Progress) -> Void
-    static func signUp(name:String, email:String, password:String, photo:UIImage, success:@escaping SignUpSuccessHandler, progress:SignUpProgressHandler? = nil, failure:FailureHandler? = nil) {
+    static func signUp(name:String, email:String, password:String,
+                       birthdate:Date, phone:String, location:CLLocationCoordinate2D,
+                       address:String?, gender:Int, photo:UIImage?,
+                       success:@escaping SignUpSuccessHandler,
+                       progress:SignUpProgressHandler? = nil,
+                       failure:FailureHandler? = nil) {
         
         let comment = "Registering..."
         SVProgressHUD.setDefaultMaskType(.gradient)
         SVProgressHUD.show(withStatus: comment)
         
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy"
+        
         Alamofire.upload(multipartFormData: { (formData) in
             
-            formData.append(name.data(using: .utf8)!, withName: "name")
-            formData.append(email.data(using: .utf8)!, withName: "email")
-            formData.append(password.data(using: .utf8)!, withName: "password")
-            formData.append(UIImageJPEGRepresentation(photo, 1)!, withName: "photo", fileName: "user_photo.jpg", mimeType: "image/jpeg")
+            ["name": name,
+             "email": email,
+             "birthdate": formatter.string(from: birthdate),
+             "location": "\(location.latitude),\(location.longitude)",
+                "address": address ?? "",
+                "gender": "\(gender)",
+                "phone": phone,
+                "password": password ].forEach({ (key, value) in
+                    formData.append(value.data(using: .utf8)!, withName: key)
+                })
+            
+            if let image = photo {
+                formData.append(UIImageJPEGRepresentation(image, 1)!,
+                                withName: "photo",
+                                fileName: "user_photo.jpg", mimeType: "image/jpeg")
+            }
             
         }, to: "\(base)/signup") { (result) in
             
@@ -124,7 +146,7 @@ class AppWebApi {
                     
                     SVProgressHUD.dismiss()
                     if let json = response.result.value {
-                    
+                        
                         if let status = json["status"].string, status == "success",
                             let userId = json["user_id"].string {
                             

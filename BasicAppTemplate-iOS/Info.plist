@@ -6,6 +6,8 @@
 	<string>We need access to photo library so you can select profile photo</string>
 	<key>NSCameraUsageDescription</key>
 	<string>We need access to camera so you can select profile photo</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need access to your location to optimize your app experience</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>

@@ -17,7 +17,7 @@ struct NotificationNames {
 struct APIKeys {
     
     //Example, GoogleMaps
-    static let GoogleMaps = "GOOGLE MAPS API KEY"
+    static let GoogleMaps = "YOUR GOOGLE API KEY"
 }
 
 struct Colors {

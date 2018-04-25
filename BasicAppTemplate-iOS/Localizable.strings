@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  BasicAppTemplate-iOS
+
+  Created by Ali Hajjaj on 4/25/18.
+  Copyright © 2018 Imagine Technologies. All rights reserved.
+*/
+
+"signup-error" = "Please Enter All Fields Properly";
+"password-error" = "Please type password & confirm it properly";
+"email-error" = "Please type your email correctly";
+"location-select-confirm" = "Are you sure you want to select '%@' as your location?";
+"location-select-title" = "Select Location";
+"yes" = "Yes";
+"no" = "No";
+"ok" = "OK";
